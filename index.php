@@ -15,6 +15,9 @@ include "./db/base.php";
     <!-- 這一段是導入css -->
 </head>
 <body>
+    <?php
+    include "./layouts/header.php";
+    ?>
     
 </body>
 </html>
