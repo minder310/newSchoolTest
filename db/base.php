@@ -13,4 +13,18 @@ function dd($array){
     print_r($array);
     echo "</pre>";
 }
+
+
+function all($table,...$args){
+    global $pdo;
+    $sql="select * from $table";
+
+    if(isset($args)){
+        if(is_array($args[0])){
+            foreach($args[0] as $key => $value){
+                $tmp[]="`$key`='$value'";
+            }
+        }
+    }
+}
 ?>
