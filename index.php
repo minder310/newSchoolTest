@@ -41,7 +41,10 @@ include "./db/base.php";
         }else{
             include "front/main.php";
         }
+        // all("students",["dept"=>2,"graduate_at"=>2]);
+        // 表單名稱,取出列表。
         ?>
+
     </main>
     <!-- 導入js檔案。 -->
     <?php include "./layouts/scripts.php"?>
