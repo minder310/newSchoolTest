@@ -25,7 +25,7 @@ include "./db/base.php";
         <?php
 
         // 這段的意思是如果$_GET['do']有值，則$do=$_GET['do']如果沒有，$do=main;
-        $do = $_GET['do'] ?? 'main';
+        $do=$_GET['do']??'main';
         /*原程式碼。以上是縮寫。 
         if(isset($_GET['do'])){
         $do=$_GET['do'];

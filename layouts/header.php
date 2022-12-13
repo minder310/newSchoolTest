@@ -35,7 +35,7 @@
                 echo "<!------新增功能預定------->";
                 // 用網址帶值的方式讓他可以知道，要顯示網頁內容，以下都是。
                 echo "<a class='mx-2' href='index.php?do=main'>最新消息</a>";
-                echo "<a class='mx-2' href='index.php?do=students=list'>學生列表</a>";
+                echo "<a class='mx-2' href='index.php?do=students_list'>學生列表</a>";
                 echo "<a class='mx-2' href='index.php?do=surver'>意見調查表</a>";
                 echo "</div>";
                 echo "<div>";
