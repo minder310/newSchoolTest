@@ -1,7 +1,8 @@
 <!-- 教師註冊網站，前端。 -->
 <div class="col-md-4 mx-auto my-5 p-5 border shadow-sm">
     <h3 class="text-center">教師註冊</h3>
-    <form action="../api/reg_user.php" method="post">
+    <form action="./api/reg_user.php" method="post">
+        <!-- 這邊要特別注意，因為資料是輸進index所以，必須要用index的觀點去思考。 -->
     <div class="form-group">
         <label>帳號</label>
         <input type="text" class="form-control" name="acc">
