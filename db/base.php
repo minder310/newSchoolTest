@@ -4,6 +4,7 @@ $dns="mysql:host=localhost;charset=utf8;dbname=school";
 // 宣告pdo=資料庫資料並匯入，上面語法，並且宣告，帳號密碼。
 $pdo=new PDO($dns,'root','');
 
+session_start();
 // 宣告時間格式，並設定亞洲台北。
 date_default_timezone_set("Asia/Taipei");
 

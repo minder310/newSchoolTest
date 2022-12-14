@@ -1,8 +1,8 @@
 <!-- 後端登入，api -->
 <?php
-include "./db/base.php";
+include "../db/base.php";
 // 導入資料庫檔案。
-
+// 這邊是兩點。
 session_start();
 // 宣告session可以使用。並且可以傳值。
 
@@ -24,16 +24,16 @@ if($chk==1){
     // 取出使用者資料，並且將login=user資料。
     dd($user);
     $_SESSION['login']=$user;
-
+    header("location:../admin_center.php");
 }else{
     if(isset($_SESSION['login_try'])){
         $_SESSION['login_try']++;
     }else{
         $_SESSION['login_try']=1;
     }
+    header("location:../index.php?do=login&error=login");
 }
-echo "這邊沒有加header，所以不會自動跳回去。"
-
+echo "這邊沒有加header，所以不會自動跳回去。";
 
 
 

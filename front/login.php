@@ -12,17 +12,17 @@
     }
     ?>
         <!-- 將帳號密碼，傳值至../api/chk_user.php -->
-    <form action="../api/chk_user.php" method="post">
+    <form action="./api/chk_user.php" method="post">
         <div class="form-group">
             <label>帳號</label>
             <input type="text" class="form-control" name="acc" id="">
         </div>
         <div class="form-group">
             <label>密碼</label>
-            <input type="text" class="form-control" type="password" name="pw" id="">
+            <input  class="form-control" type="password" name="pw" id="">
         </div>
         <div class="text-center">
-            <input type="text" class="btn btn-primary" type="subimit" value="登入" id="">
+            <input class="btn btn-primary" type="submit" value="登入" id="">
         </div>
     </form>
 </div>
