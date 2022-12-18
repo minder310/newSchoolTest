@@ -83,17 +83,18 @@ function insert($table,$cols)
     $keys=array_keys($cols);
     // dd($keys);測試array_key是幹嘛的。
     // 取出陣列中所有的key值。
-    $sql="inster into $table (`" . join("`,`",$keys)."`) values ('". join("','",$cols)."')";
+    $sql="insert into $table (`" . join("`,`",$keys)."`) values ('". join("','",$cols)."')";
     // $SQL指令為，要增加哪一個資料到哪一個$table，並且有取出所有的key並傳串聯成字串，後面輸入相對應的資料。
     dd($sql);
     // return $pdo->exec($sql);
     // 這邊是指會回傳影響了幾筆資料。
+    return $pdo->exec($sql);
 }
 
 function find($table,$id){
     global $pdo;
     // 取用資料庫全域變數。
-    $sql="select * from `$table ` ";
+    $sql="select * from `$table` ";
     
     if(is_array($id)){
         foreach($id as $key => $value){
@@ -101,7 +102,7 @@ function find($table,$id){
             // 要是是陣列就把她組成，語法讓他可以使用。
         }
         
-        $sql=$sql . " where " . join("&&",$tmp);
+        $sql=$sql . " where " . join(" && ",$tmp);
     }else{
         $sql=$sql . "where `id`='$id'";
     }
