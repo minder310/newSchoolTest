@@ -109,3 +109,33 @@ function find($table,$id){
     dd($sql);
     return $pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
 }
+// 更新單筆或多筆資料。
+function update($table,$col,...$args){
+    global $pdo;
+
+    $sql="update $table set ";
+    // 要更新的數值。
+    if(is_array($col)){
+        foreach($col as $key => $value){
+            $tmp[]="`$key`='$value'";
+        };
+        $sql =$sql . join(",",$tmp);
+    }else{
+        echo "錯誤，請提供陣列形式更新資料。";
+    }
+    // 宣告要更新的條件where。
+    if(isset($args[0])){
+        if(is_array($args)){
+            $tmp=[];
+            foreach($args as $key => $value){
+                $tmp[]="`$key`='$value'";
+            }
+            $sql=$sql . "where" . join("&&",$tmp);
+        }else{
+            $sql=$sql . "where `id`='{$args[0]}'";
+        }
+    }
+    echo $sql;
+
+    return $pdo->exec($sql);
+}
