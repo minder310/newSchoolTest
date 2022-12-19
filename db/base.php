@@ -91,6 +91,7 @@ function insert($table,$cols)
     return $pdo->exec($sql);
 }
 
+// 搜尋特定資料，可以
 function find($table,$id){
     global $pdo;
     // 取用資料庫全域變數。
